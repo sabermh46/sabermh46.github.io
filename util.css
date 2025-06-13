@@ -1,0 +1,38 @@
+/* Example styles for demonstration */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+:root {
+    --surface: #f1f1f1;
+    --primary: #6200ea;
+    --secondary: #03dac6;
+    --text: #000000;
+    --text-secondary: #666666;
+    --border: #e0e0e0;
+}
+body {
+    max-width: 100% !important;
+    overflow-x: clip;
+    background: var(--surface);
+}
+.lxgw {
+  font-family: "LXGW Marker Gothic", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.fira-sans {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.int-obs {
+    /* opacity: 0;
+    transition: opacity 0.6s ease; */
+}
+
+.int-obs.inview {
+    /* opacity: 1; */
+}
