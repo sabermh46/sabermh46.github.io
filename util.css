@@ -14,9 +14,12 @@
     --border: #e0e0e0;
 }
 body {
+    width: 100%;
+    background: var(--surface);
+}
+body > div {
     max-width: 100% !important;
     overflow-x: clip;
-    background: var(--surface);
 }
 .lxgw {
   font-family: "LXGW Marker Gothic", sans-serif;
@@ -35,4 +38,58 @@ body {
 
 .int-obs.inview {
     /* opacity: 1; */
+}
+
+
+/* ===== Preloader Styles ===== */
+.preloader-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--surface);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+}
+
+.preloader-overlay.loaded {
+    opacity: 0;
+}
+
+.preloader-overlay .spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(0,0,0,0.1);
+    border-radius: 50%;
+    border-top-color: var(--secondary);
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ===== Image Loaded State ===== */
+.image-loaded .author-container .img > img {
+    opacity: 1 !important;
+    transform: translate(0, 0) scale(1);
+}
+
+/* Add this to your existing animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Add this to your existing .img img selector */
+.author-container .img > img {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    animation: fadeIn 0.5s ease forwards;
 }

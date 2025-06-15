@@ -39,6 +39,8 @@ nav.navigation .links > li > a:hover{
 }
 .author-container .img > img {
     width: 100%;
+    transition: 1s ease;
+    transform: translate(0, 50px) scale(0.7);
 }
 .author-container .img .background {
     position: absolute;
@@ -53,43 +55,70 @@ nav.navigation .links > li > a:hover{
     position: absolute;
     top: 30%;
     left: 20%;
-    width: 5rem;
-    height: 5rem;
+    width: 1rem;
+    height: 1rem;
     background: rgb(252, 208, 255);
     border-radius: 100px;
     z-index: 3;
+    opacity: 0.4;
+    transition: 1s ease;
     animation: zoomInOut 10s ease 0s infinite forwards;
+}
+
+.image-loaded .img .background::before {
+    width: 5rem;
+    height: 5rem;
+    opacity: 1
 }
 
 .img .background::after {
     top: 70%;
     left: 50%;
     transform: scale(1) translate(-50%, -50%);
-    width: 60%;
-    height: 60%;
+    width: 20%;
+    height: 20%;
     aspect-ratio: 1;
     border-radius: 300px;
     background: rgb(255, 225, 225);
     z-index: -3;
+    transition: 0.5s ease;
     animation: zoomInOutCenter 10s ease 1s infinite forwards;
 }
+
+.image-loaded .img .background::after {
+    width: 60%;
+    height: 60%;
+    opacity: 1
+}
+
 .circlebg {
     position: absolute;
     top: 50px;
     left: 60%;
-    width: 8rem;
-    height: 8rem;
+    width: 2rem;
+    height: 2rem;
     background: rgb(172, 255, 218);
     border-radius: 100px;
     z-index: 3;
+    transition: 1s ease;
     animation: zoomInOut 10s ease 1s infinite forwards;
+}
+.image-loaded .circlebg {
+    width: 8rem;
+    height: 8rem;
+    opacity: 1
 }
 .mtb {
     height: 200px;
-    opacity: 0.1;
+    opacity: 0;
     position: absolute;
-    right: -82px;
+    right: 20px;
     bottom: -30px;
+    transition: 1.5s ease;
+}
+.image-loaded .mtb {
+    opacity: 0.2;
+    right: -82px;
 }
 
 .author-container .info {
@@ -109,12 +138,12 @@ nav.navigation .links > li > a:hover{
 }
 .author-container .info p {
     font-size: 1.2rem;
-    color: rgb(130, 130, 130);
-    font-weight: 500;
+    color: rgb(54, 54, 54);
+    font-weight: 600;
     text-align: justify;
 }
 .author-bio {
-    font-size: 0.8rem !important;
+    font-size: 1rem !important;
     color: rgb(112, 112, 112) !important;
     line-height: 2;
     width: 95%;
@@ -136,6 +165,37 @@ nav.navigation .links > li > a:hover{
     background: black;
 }
 
+
+.section2 {
+    padding: 40px 20px;
+    position: relative;
+    height: 300px;
+}
+.bicycle-container {
+    position: absolute;
+    width: min-content;
+    right: calc(var(--threshold-percentage) * 1%);
+    transition: 0.1s ease;
+}
+
+.cyclesvg {
+    height: min(250px, max(150px, 20vw));
+    opacity: 0.5;
+}
+
+    /* Wheel rotation styles */
+.wheel-1 {
+    transform: rotate(calc(var(--threshold-percentage) * -4.6deg * var(--screen-width)));
+    transform-origin: 567px 347px;
+    transition: transform 0.1s linear;
+}
+.wheel-2 {
+    transform: rotate(calc(var(--threshold-percentage) * -4.6deg * var(--screen-width)));
+    transform-origin: 160px 347px;
+    transition: transform 0.1s linear;
+}
+        
+
 @media (max-width: 600px) {
     .author-container {
         flex-direction: column;
@@ -143,7 +203,7 @@ nav.navigation .links > li > a:hover{
         text-align: center;
     }
     .author-container .img {
-        max-width: 300px;
+        max-width: 350px;
     }
     .circlebg {
         width: 6rem;
@@ -151,16 +211,19 @@ nav.navigation .links > li > a:hover{
     }
     .mtb {
         height: 100px;
-        right: 0px;
-        bottom: -20px;
+        right: 20px;
     }
+    .image-loaded .mtb {
+        opacity: 0.2;
+        right: -22px;
+        }
     .author-container .info {
         margin-top: 30px;
         text-align: center;
         padding: 0 1rem;
     }
     .author-container .info h2 {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
     }
     .author-container .info p {
         font-size: 1rem;
@@ -169,7 +232,7 @@ nav.navigation .links > li > a:hover{
     .author-bio {
         text-align: justify !important;
         width: 100%;
-        font-size: 0.7rem !important;
+        font-size: 0.8rem !important;
     }
     .author-container .info a {
         margin: 0 auto;

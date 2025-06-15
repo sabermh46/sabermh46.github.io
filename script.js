@@ -1,4 +1,36 @@
 document.addEventListener('DOMContentLoaded', () => {
+  
+  const overlay = document.getElementById('preloader-overlay');
+    const authorImage = document.querySelector('.author-container .img img');
+    const body = document.body;
+    
+    // Add loading class to body
+    body.classList.add('image-loading');
+    
+    function handleImageLoad() {
+        // Add loaded class to body
+        body.classList.remove('image-loading');
+        body.classList.add('image-loaded');
+        
+        // Fade out overlay
+        overlay.classList.add('loaded');
+        
+        // Remove overlay after transition
+        setTimeout(() => {
+            overlay.remove();
+        }, 500);
+    }
+    
+    // Check if image is already loaded
+    if (authorImage.complete && authorImage.naturalHeight !== 0) {
+        handleImageLoad();
+    } else {
+        authorImage.addEventListener('load', handleImageLoad);
+        authorImage.addEventListener('error', handleImageLoad);
+    }
+
+
+
   // --------------------------
   // Helper: Thresholds array
   // --------------------------
@@ -79,6 +111,28 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  function updateScreenWidthFactor() {
+    // Calculate normalized screen width factor
+    // - Base factor: 1.0 for 1000px width
+    // - Scales linearly with screen size
+    const factor = window.innerWidth / 1000;
+    document.documentElement.style.setProperty('--screen-width', factor);
+}
+
+// Initialize screen width factor
+updateScreenWidthFactor();
+
+// Update screen width factor on resize
+let resizeTimeout;
+function handleResize() {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+        updateScreenWidthFactor();
+        // Also trigger scroll update to recalculate positions
+        onScroll();
+    }, 100);
+}
+
   // Smooth update with requestAnimationFrame
   let ticking = false;
   function onScroll() {
@@ -92,7 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   window.addEventListener('scroll', onScroll);
-  window.addEventListener('resize', onScroll);
+  window.addEventListener('resize', handleResize);
 
   // --------------------------
   // Cleanup
@@ -100,6 +154,8 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('beforeunload', () => {
     intObs.disconnect();
     percentObs.disconnect();
+    window.removeEventListener('resize', handleResize);
+    clearTimeout(resizeTimeout);
   });
 
 });
