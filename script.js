@@ -1,35 +1,42 @@
 document.addEventListener('DOMContentLoaded', () => {
-  
   const overlay = document.getElementById('preloader-overlay');
-    const authorImage = document.querySelector('.author-container .img img');
-    const body = document.body;
-    
-    // Add loading class to body
-    body.classList.add('image-loading');
-    
-    function handleImageLoad() {
-        // Add loaded class to body
-        body.classList.remove('image-loading');
-        body.classList.add('image-loaded');
-        
-        // Fade out overlay
-        overlay.classList.add('loaded');
-        
-        // Remove overlay after transition
-        setTimeout(() => {
-            overlay.remove();
-        }, 500);
-    }
-    
-    // Check if image is already loaded
-    if (authorImage.complete && authorImage.naturalHeight !== 0) {
-        handleImageLoad();
-    } else {
-        authorImage.addEventListener('load', handleImageLoad);
-        authorImage.addEventListener('error', handleImageLoad);
-    }
+  const authorImage = document.querySelector('.author-container .img img');
+  const body = document.body;
+  
+  // Add loading class to body
+  body.classList.add('image-loading');
 
-
+  document.querySelectorAll('.marquee__inner').forEach(inner => {
+    // Duplicate
+    inner.innerHTML += inner.innerHTML;
+    // Measure half (original) width
+    const full = inner.scrollWidth;
+    const half = full / 2;
+    // Store in CSS var
+    inner.style.setProperty('--scroll-width', `${half}px`);
+  });
+  
+  function handleImageLoad() {
+    // Add loaded class to body
+    body.classList.remove('image-loading');
+    body.classList.add('image-loaded');
+    
+    // Fade out overlay
+    overlay.classList.add('loaded');
+    
+    // Remove overlay after transition
+    setTimeout(() => {
+      overlay.remove();
+    }, 500);
+  }
+  
+  // Check if image is already loaded
+  if (authorImage.complete && authorImage.naturalHeight !== 0) {
+    handleImageLoad();
+  } else {
+    authorImage.addEventListener('load', handleImageLoad);
+    authorImage.addEventListener('error', handleImageLoad);
+  }
 
   // --------------------------
   // Helper: Thresholds array
@@ -73,14 +80,26 @@ document.addEventListener('DOMContentLoaded', () => {
   // 2) Scroll percentage: Observer + scroll for smooth update
   // --------------------------
   const trackedElements = new Set();
+  const elementStates = new WeakMap();
 
   const percentObs = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         trackedElements.add(entry.target);
+        // Initialize state if not already set
+        if (!elementStates.has(entry.target)) {
+          elementStates.set(entry.target, { hasReached100: false });
+        }
       } else {
-        trackedElements.delete(entry.target);
-        entry.target.style.setProperty('--threshold-percentage', 0);
+        // Only remove if element is below viewport (not above)
+        if (entry.boundingClientRect.top > window.innerHeight) {
+          trackedElements.delete(entry.target);
+          const state = elementStates.get(entry.target);
+          // Only reset if it hasn't reached 100% yet
+          if (state && !state.hasReached100) {
+            entry.target.style.setProperty('--threshold-percentage', 0);
+          }
+        }
       }
     });
   }, {
@@ -105,33 +124,43 @@ document.addEventListener('DOMContentLoaded', () => {
 
       let percentage = (distance / totalRange) * 100;
       percentage = Math.max(0, Math.min(100, percentage));
-        percentage = Math.round(percentage * 100) / 100; 
+      percentage = Math.round(percentage * 100) / 100; 
+
+      // Get or create state for this element
+      let state = elementStates.get(el);
+      if (!state) {
+        state = { hasReached100: false };
+        elementStates.set(el, state);
+      }
+      
+      // If we've reached 100%, mark it and don't go below
+      if (percentage >= 99.9) {
+        state.hasReached100 = true;
+        percentage = 100;
+      }
+      
 
       el.style.setProperty('--threshold-percentage', percentage);
     });
   }
 
   function updateScreenWidthFactor() {
-    // Calculate normalized screen width factor
-    // - Base factor: 1.0 for 1000px width
-    // - Scales linearly with screen size
     const factor = window.innerWidth / 1000;
     document.documentElement.style.setProperty('--screen-width', factor);
-}
+  }
 
-// Initialize screen width factor
-updateScreenWidthFactor();
+  // Initialize screen width factor
+  updateScreenWidthFactor();
 
-// Update screen width factor on resize
-let resizeTimeout;
-function handleResize() {
+  // Update screen width factor on resize
+  let resizeTimeout;
+  function handleResize() {
     clearTimeout(resizeTimeout);
     resizeTimeout = setTimeout(() => {
-        updateScreenWidthFactor();
-        // Also trigger scroll update to recalculate positions
-        onScroll();
+      updateScreenWidthFactor();
+      onScroll();
     }, 100);
-}
+  }
 
   // Smooth update with requestAnimationFrame
   let ticking = false;
@@ -157,5 +186,13 @@ function handleResize() {
     window.removeEventListener('resize', handleResize);
     clearTimeout(resizeTimeout);
   });
-
 });
+
+
+
+
+
+
+
+
+

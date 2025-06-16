@@ -139,7 +139,7 @@ nav.navigation .links > li > a:hover{
 .author-container .info p {
     font-size: 1.2rem;
     color: rgb(54, 54, 54);
-    font-weight: 600;
+    font-weight: 400;
     text-align: justify;
 }
 .author-bio {
@@ -194,6 +194,227 @@ nav.navigation .links > li > a:hover{
     transform-origin: 160px 347px;
     transition: transform 0.1s linear;
 }
+
+
+/* Performance Metrics Section */
+.perf-metrics {
+    padding: 5px;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.metric-card {
+    background: rgb(195, 255, 195);
+    padding: 8px 16px;
+    border-radius: 8px;
+}
+.metric-value {
+    font-size: 2rem;
+    color: rgb(22, 169, 22);
+    text-align: center;
+}
+.metric-label {
+    font-family: "LXGW Marker Gothic", sans-serif;
+    text-align: center;
+}
+.perf-details {
+
+}
+.perf-details p {
+    text-align: center;
+    font-family: "LXGW Marker Gothic", sans-serif;
+    color: rgb(54, 54, 54);
+    line-height: 150%;
+    font-size: 1rem;
+    word-spacing: 5px;
+    padding: 20px 15px;
+}
+
+.perf-details ul {
+    width: max-content;
+    margin: 0 auto;
+    list-style-type: none;
+}
+.perf-details ul li  {
+    padding: 10px;
+    color: rgb(22, 30, 83);
+}
+.perf-details ul li::before  {
+    content: '✓ ';
+    font-weight: bold;
+    color: rgb(22, 169, 22);
+    font-size: 1.2rem;
+}
+
+/* Skills Section */
+/* Skills Matrix */
+.skills-matrix {
+  padding: 4rem 0;
+  background: rgba(255,255,255,0.03);
+}
+
+.skills-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.skills-table th, 
+.skills-table td {
+  padding: 1rem;
+  text-align: center;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.skills-table th {
+  background: rgba(98, 0, 234, 0.2);
+  font-weight: 600;
+}
+
+.skills-table tbody th {
+  background: rgba(3, 218, 198, 0.15);
+}
+
+.skills-table td {
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .matrix-wrapper {
+    overflow-x: auto;
+  }
+  
+  .skills-table {
+    min-width: 600px;
+  }
+}
+
+/* Projects Section */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+}
+
+.project-image {
+  height: 200px;
+  overflow: hidden;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.05);
+}
+
+.project-info {
+  padding: 1.5rem;
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.tech-stack span {
+  background: rgba(98, 0, 234, 0.1);
+  color: var(--primary);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+}
+
+/* Timeline */
+.timeline {
+  position: relative;
+  padding: 2rem 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100%;
+  background: var(--border);
+}
+
+.timeline-item {
+  display: flex;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.timeline-item:nth-child(odd) {
+  flex-direction: row-reverse;
+}
+
+.timeline-date {
+  width: 40%;
+  text-align: right;
+  padding-right: 2rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.timeline-item:nth-child(odd) .timeline-date {
+  text-align: left;
+  padding-left: 2rem;
+  padding-right: 0;
+}
+
+.timeline-content {
+  width: 60%;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  position: relative;
+}
+
+.timeline-content::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  right: -8px;
+  width: 16px;
+  height: 16px;
+  background: white;
+  border: 3px solid var(--primary);
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.timeline-item:nth-child(odd) .timeline-content::before {
+  right: auto;
+  left: -8px;
+}
         
 
 @media (max-width: 600px) {
@@ -237,6 +458,9 @@ nav.navigation .links > li > a:hover{
     .author-container .info a {
         margin: 0 auto;
         text-align: center;
+    }
+    .metric-card {
+        max-width: 120px;
     }
 }
 
