@@ -12,7 +12,7 @@
     --text: #000000;
     --text-secondary: #666666;
     --border: #e0e0e0;
-    --heading: #8e77ff;
+    --heading: #646464;
 }
 body {
     width: 100%;
@@ -49,6 +49,7 @@ body > div {
 }
 
 .heading2 {
+    font-family: "LXGW Marker Gothic", sans-serif;
     font-size: 2.5rem;
     color: var(--heading);
     margin-bottom: 10px;
