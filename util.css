@@ -23,6 +23,7 @@ body > div {
     max-width: 100% !important;
     overflow-x: clip;
 }
+
 .lxgw {
   font-family: "LXGW Marker Gothic", sans-serif;
   font-weight: 400;
@@ -32,6 +33,9 @@ body > div {
   font-family: "Fira Sans", sans-serif;
   font-weight: 400;
   font-style: normal;
+}
+.bold {
+    font-weight: 600;
 }
 .container {
     width: 100%;
@@ -52,7 +56,14 @@ body > div {
     font-family: "LXGW Marker Gothic", sans-serif;
     font-size: 2.5rem;
     color: var(--heading);
+    letter-spacing: -5px;
+    opacity: 0;
     margin-bottom: 10px;
+    transition: 0.4s ease;
+}
+.inview .heading2 {
+  letter-spacing: 0px;
+  opacity: 1;
 }
 .text-center {
     text-align: center;
@@ -167,4 +178,117 @@ body > div {
 @keyframes scroll-reverse {
   0%   { transform: translateX(calc(-1 * var(--scroll-width))); }
   100% { transform: translateX(0); }
+}
+
+
+.icons-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.dart-icon {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+}
+.dart-icon .part {
+  opacity: 0;
+  transform-origin: center;
+  transition: transform 1s ease, opacity 1s ease;
+  transition-delay: 0.3s;
+}
+
+/* Initial scattered state */
+.dart-icon .part1 {
+  transform: translate(-400px, -150px) rotate(-40deg);
+}
+.dart-icon .part2 {
+  transform: translate(220px, -170px) rotate(60deg);
+}
+.dart-icon .part3 {
+  transform: translate(-180px, 170px) rotate(-30deg);
+}
+.dart-icon .part4 {
+  transform: translate(400px, 400px) rotate(20deg);
+}
+.dart-icon .part5 {
+  transform: translate(-190px, 400px) rotate(-50deg);
+}
+.dart-icon .part6 {
+  transform: translate(320px, -150px) rotate(80deg);
+}
+
+/* When in view: restore original */
+.inview .dart-icon .part {
+  opacity: 1;
+  transform: translate(0, 0) rotate(0deg) !important;
+}
+
+
+/* Base: ensure smooth transitions */
+.js-icon {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+}
+.js-icon .bg,
+.js-icon .letter {
+  transition: all 1s ease;
+}
+
+/* 1️⃣ Initial states */
+.js-icon .bg {
+  transform: scale(0);
+  transform-origin: center;
+}
+
+.js-icon .j {
+  transform: translateY(-200px);
+  opacity: 0;
+}
+
+.js-icon .s {
+  transform: translateY(200px);
+  opacity: 0;
+}
+
+/* 2️⃣ When .inview: animate to final */
+.inview .js-icon .bg {
+  transform: scale(1);
+}
+
+/* Delay letters so they come after bg */
+.inview .js-icon .j {
+  transform: translateY(0);
+  opacity: 1;
+  transition-delay: 0.5s; /* adjust as you like */
+}
+
+.inview .js-icon .s {
+  transform: translateY(0);
+  opacity: 1;
+  transition-delay: 0.5s;
+}
+
+.skills-headline {
+  min-width: 100%;
+  flex: 1;
+  text-align: center;
+}
+
+.middlePlus {
+  font-size: 36px;
+  font-weight: bold;
+  color: var(--primary);
+  transform: translateY(100px);
+  opacity: 0;
+  transition: transform 1.2s ease, opacity 1.2s ease;
+}
+.inview .middlePlus {
+  transform: translateY(0);
+  opacity: 1;
+  
 }
