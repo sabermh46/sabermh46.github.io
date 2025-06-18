@@ -259,45 +259,54 @@ nav.navigation .links > li > a:hover{
   margin-bottom: 30px;
 }
 
-.skills-grid {
-  display: grid;
-  /* Default to a single column for mobile first */
-  grid-template-columns: 1fr;
-  gap: 20px; /* Space between skill categories */
+.skills-icons {
+  padding: 4rem 1rem;
+  text-align: center;
 }
 
-.skill-category {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 20px;
-  background-color: #fff;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+.skills-icons h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
 }
 
-.category-title {
-  font-size: 1.8em;
-  margin-top: 0;
-  margin-bottom: 15px;
-  color: #333;
-  text-align: center; /* Center the category title for mobile */
-}
-
-.skill-item {
+.icons-grid {
   display: flex;
-  flex-direction: column; /* Stack label and values vertically on mobile */
-  margin-bottom: 10px;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
-.skill-label {
+.icon-card {
+  background: #ebebeb;
+  border: 2px solid rgba(0, 0, 0, 0.031);
+  padding: 1rem;
+  border-radius: 0.75rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+  flex: 1;
+}
+
+.icon-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.icon-card img {
+  margin: 0 auto;
+  display: block;
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+}
+
+.icon-card p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: black;
   font-weight: bold;
-  color: #555;
-  margin-bottom: 5px; /* Space between label and values */
+  font-family: "LXGW Marker Gothic", sans-serif;
+  text-align: center;
 }
 
-.skill-values {
-  color: #666;
-  line-height: 1.5;
-}
 
 /* --- Desktop View (using your original table structure conceptually) --- */
 @media (min-width: 768px) {
