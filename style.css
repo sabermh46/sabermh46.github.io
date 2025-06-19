@@ -275,28 +275,8 @@ nav.navigation .links > li > a:hover{
   gap: 0.5rem;
 }
 
-.icon-card {
-  background: #ebebeb;
-  border: 2px solid rgba(0, 0, 0, 0.031);
-  padding: 1rem;
-  border-radius: 0.75rem;
-  transition: transform 0.3s, box-shadow 0.3s;
-  flex: 1;
-}
 
-.icon-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-}
 
-.icon-card img {
-  margin: 0 auto;
-  display: block;
-  width: 50px;
-  height: 50px;
-  object-fit: contain;
-  margin-bottom: 0.5rem;
-}
 
 .icon-card p {
   margin: 0;
@@ -306,6 +286,64 @@ nav.navigation .links > li > a:hover{
   font-family: "LXGW Marker Gothic", sans-serif;
   text-align: center;
 }
+
+/* ------------------ */
+
+
+.tech-grid {
+  position: relative;
+  width: 450px;
+  height: 450px;
+  margin: 0 auto;
+  padding: 50px 0;
+}
+
+.cir-heading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  font-weight: 600;
+  color: blue;
+  letter-spacing: -10px;
+  transition: 0.5s ease;
+}
+
+@media (max-width: 768px) {
+  .tech-grid {
+    width: 300px;
+    height: 300px;
+    
+  }
+  .cir-heading {
+    font-size: 20px;
+  }
+}
+.inview .cir-heading {
+  letter-spacing: 3px;
+}
+.icon-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  width: 70px;
+  background: #ffffff;
+  border: 1px solid rgba(128, 128, 128, 0.329);
+  border-radius: 1rem;
+  padding-top: 5px;
+  height: 90px;
+  text-align: center;
+  will-change: transform;
+}
+
+.icon-card img {
+  width: min(40px, max(3vw, 60px));
+  aspect-ratio: 1;
+  object-fit: cover;
+  margin-bottom: .5rem;
+}
+
 
 
 /* --- Desktop View (using your original table structure conceptually) --- */
