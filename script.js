@@ -174,6 +174,54 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+
+        (() => {
+            const widthsc = document.documentElement.clientWidth;
+            
+            const grid   = document.querySelector('.tech-grid');
+            const cards  = Array.from(grid.querySelectorAll('.icon-card'));
+            const R_mult = 2; // base factor per percent
+            const MIN_R  = 30; // minimum radius in px
+            const MAX_R  = widthsc <= 768 ? 110 : 180; // maximum radius in px
+
+            const circle = [
+              { x:  1,      y:   0    },
+              { x:  0.5,    y:   0.866},
+              { x: -0.5,    y:   0.866},
+              { x: -1,      y:   0    },
+              { x: -0.5,    y:  -0.866},
+              { x:  0.5,    y:  -0.866}
+            ];
+
+            function frame() {
+              // measure
+              const rect = grid.getBoundingClientRect();
+              const vh   = window.innerHeight;
+
+              // map scroll position to 0…1
+              let pct = (vh - rect.top) / vh;
+              pct = Math.min(1, Math.max(0, pct));
+
+              // compute pixel radius with clamp
+              let radius = R_mult * (pct * 100);
+              radius = Math.max(MIN_R, Math.min(MAX_R, radius));
+
+              // apply transform for each icon
+              cards.forEach(card => {
+                const i = +card.dataset.index - 1;
+                const { x, y } = circle[i];
+                const tx = x * radius;
+                const ty = y * radius;
+                card.style.transform = `translate(-50%, -50%) translate3d(${tx}px, ${ty}px, 0)`;
+              });
+
+              requestAnimationFrame(frame);
+            }
+
+            requestAnimationFrame(frame);
+          })();
+
+
   window.addEventListener('scroll', onScroll);
   window.addEventListener('resize', handleResize);
 

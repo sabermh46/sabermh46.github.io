@@ -208,14 +208,14 @@ nav.navigation .links > li > a:hover{
     flex-wrap: wrap;
 }
 .metric-card {
-    background: rgb(218, 255, 218);
+    background: rgb(239, 239, 239);
     padding: 8px 16px;
-    border: 2px solid rgb(81, 152, 81);
+    border: 2px solid rgb(255, 255, 255);
     border-radius: 8px;
 }
 .metric-value {
     font-size: 2rem;
-    color: rgb(18, 124, 18);
+    color: var(--primary);
     text-align: center;
     font-weight: 600;
 }
@@ -254,38 +254,8 @@ nav.navigation .links > li > a:hover{
 
 /* Skills Section */
 
-.heading2 {
-  font-size: 2.5em;
-  margin-bottom: 30px;
-}
-
-.skills-icons {
-  padding: 4rem 1rem;
-  text-align: center;
-}
-
-.skills-icons h2 {
-  font-size: 2rem;
-  margin-bottom: 2rem;
-}
-
-.icons-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
 
 
-
-
-.icon-card p {
-  margin: 0;
-  font-size: 0.9rem;
-  color: black;
-  font-weight: bold;
-  font-family: "LXGW Marker Gothic", sans-serif;
-  text-align: center;
-}
 
 /* ------------------ */
 
@@ -303,10 +273,46 @@ nav.navigation .links > li > a:hover{
   top: 50%;
   left: 50%;
   transform: translate3d(-50%, -50%, 0);
+  font-family: "LXGW Marker Gothic", sans-serif;
   font-weight: 600;
-  color: blue;
+  color: #0d9b00;
+  text-transform: uppercase;
   letter-spacing: -10px;
   transition: 0.5s ease;
+}
+
+
+.inview .cir-heading {
+  letter-spacing: 3px;
+}
+.icon-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  width: 70px;
+  background: #ffffff;
+  border: 2px solid rgba(0, 0, 0, 0.08);
+  border-radius: 1rem;
+  padding-top: 5px;
+  height: 90px;
+  text-align: center;
+  will-change: transform;
+}
+.icon-card p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: black;
+  font-weight: bold;
+  font-family: "LXGW Marker Gothic", sans-serif;
+  text-align: center;
+}
+
+.icon-card img {
+  width: min(40px, max(3vw, 60px));
+  aspect-ratio: 1;
+  object-fit: cover;
+  margin-bottom: .5rem;
 }
 
 @media (max-width: 768px) {
@@ -318,132 +324,9 @@ nav.navigation .links > li > a:hover{
   .cir-heading {
     font-size: 20px;
   }
-}
-.inview .cir-heading {
-  letter-spacing: 3px;
-}
-.icon-card {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate3d(-50%, -50%, 0);
-  width: 70px;
-  background: #ffffff;
-  border: 1px solid rgba(128, 128, 128, 0.329);
-  border-radius: 1rem;
-  padding-top: 5px;
-  height: 90px;
-  text-align: center;
-  will-change: transform;
-}
-
-.icon-card img {
-  width: min(40px, max(3vw, 60px));
-  aspect-ratio: 1;
-  object-fit: cover;
-  margin-bottom: .5rem;
-}
-
-
-
-/* --- Desktop View (using your original table structure conceptually) --- */
-@media (min-width: 768px) {
-  .skills-grid {
-    display: table; /* Revert to table-like display for larger screens */
-    width: 100%;
-    border-collapse: collapse;
+  .inview .cir-heading {
+    letter-spacing: 2px;
   }
-
-  .skill-category {
-    display: table-row; /* Each category becomes a table row */
-    border: none; /* Remove individual borders if table handles them */
-    box-shadow: none; /* Remove individual shadows */
-    padding: 0;
-  }
-
-  .category-title {
-    display: table-cell;
-    vertical-align: top;
-    padding: 15px;
-    border: 1px solid #ddd;
-    text-align: left;
-    font-size: 1.5em; /* Adjust font size for desktop */
-  }
-
-  .skill-item {
-    display: table-cell; /* Each skill-item becomes a table cell */
-    border: 1px solid #ddd;
-    padding: 15px;
-    flex-direction: row; /* Display label and values horizontally on desktop */
-    align-items: baseline; /* Align text baselines */
-  }
-
-  .skill-label {
-    margin-right: 8px; /* Space between label and values */
-    margin-bottom: 0; /* Remove vertical margin */
-    white-space: nowrap; /* Keep label on one line */
-  }
-}
-
-@media (max-width: 768px) {
-  .matrix-wrapper {
-    overflow-x: auto;
-  }
-  
-}
-
-/* Projects Section */
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2rem;
-}
-
-.project-card {
-  background: white;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease;
-}
-
-.project-card:hover {
-  transform: translateY(-10px);
-}
-
-.project-image {
-  height: 200px;
-  overflow: hidden;
-}
-
-.project-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.project-card:hover .project-image img {
-  transform: scale(1.05);
-}
-
-.project-info {
-  padding: 1.5rem;
-}
-
-.tech-stack {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin: 1rem 0;
-}
-
-.tech-stack span {
-  background: rgba(98, 0, 234, 0.1);
-  color: var(--primary);
-  padding: 0.25rem 0.75rem;
-  border-radius: 20px;
-  font-size: 0.85rem;
 }
 
 /* Timeline */
