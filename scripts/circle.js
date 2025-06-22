@@ -1,14 +1,7 @@
 (() => {
     const widthsc = document.documentElement.clientWidth;
 
-    /**
-     * Generates an array of {x, y} coordinates for the first half of an even number of elements
-     * arranged in a perfect circle.
-     * The remaining half will be mirrored during rendering.
-     * Starts from the right (0 degrees) and goes clockwise for the first half.
-     * @param {number} numElements - The total number of even elements.
-     * @returns {Array<{x: number, y: number}>} An array of coordinate objects for the first half.
-     */
+
     function generateEvenCircleHalfCoordinates(numElements) {
         if (numElements % 2 !== 0) {
             console.warn("generateEvenCircleHalfCoordinates called with an odd number of elements. This function is optimized for even numbers only.");
@@ -68,7 +61,7 @@
         const defaultOptions = {
             rMultiplier: 2,
             minRadius: 30,
-            maxRadius: widthsc <= 768 ? 110 : 180,
+            maxRadius: widthsc <= 768 ? 110 : 160,
             minElements: 2,
             maxElements: 16
         };

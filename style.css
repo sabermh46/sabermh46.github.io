@@ -173,11 +173,18 @@ nav.navigation .links > li > a:hover{
     padding: 40px 20px;
     position: relative;
     height: 300px;
+    min-height: 150vh;
+}
+.b-wrapper {
+    position: sticky;
+    top:200px;
+    height: 300px;
 }
 .bicycle-container {
     position: absolute;
     width: min-content;
     right: calc(var(--threshold-percentage) * 1%);
+   
 }
 
 .cyclesvg {
@@ -205,9 +212,9 @@ nav.navigation .links > li > a:hover{
     flex-wrap: wrap;
 }
 .metric-card {
-    background: rgb(239, 239, 239);
+    background: hsl(0, 0%, 95%);
     padding: 8px 16px;
-    border: 2px solid rgb(255, 255, 255);
+    border: 2px solid hsla(0, 0%, 90%);
     border-radius: 8px;
 }
 .metric-value {
@@ -272,12 +279,16 @@ nav.navigation .links > li > a:hover{
   transform: translate3d(-50%, -50%, 0);
   font-family: "LXGW Marker Gothic", sans-serif;
   font-weight: 600;
-  color: #0d9b00;
+  color: transparent;
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  background-clip: text;
   text-transform: uppercase;
   letter-spacing: -10px;
   transition: 0.5s ease;
 }
-
+.cir-heading.up {
+    top: 48%;
+}
 
 .inview .cir-heading {
   letter-spacing: 3px;
@@ -292,7 +303,7 @@ nav.navigation .links > li > a:hover{
   border: 2px solid rgba(0, 0, 0, 0.08);
   border-radius: 1rem;
   padding-top: 5px;
-  height: 90px;
+  height: 95px;
   text-align: center;
   will-change: transform;
 }
@@ -300,6 +311,7 @@ nav.navigation .links > li > a:hover{
   margin: 0;
   font-size: 0.9rem;
   color: black;
+  word-wrap: break-word;
   font-weight: bold;
   font-family: "LXGW Marker Gothic", sans-serif;
   text-align: center;
