@@ -178,7 +178,6 @@ nav.navigation .links > li > a:hover{
     position: absolute;
     width: min-content;
     right: calc(var(--threshold-percentage) * 1%);
-    transition: 0.1s ease;
 }
 
 .cyclesvg {
@@ -190,12 +189,10 @@ nav.navigation .links > li > a:hover{
 .wheel-1 {
     transform: rotate(calc(var(--threshold-percentage) * -4.6deg * var(--screen-width)));
     transform-origin: 567px 347px;
-    transition: transform 0.1s linear;
 }
 .wheel-2 {
     transform: rotate(calc(var(--threshold-percentage) * -4.6deg * var(--screen-width)));
     transform-origin: 160px 347px;
-    transition: transform 0.1s linear;
 }
 
 
