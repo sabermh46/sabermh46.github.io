@@ -61,7 +61,7 @@
         const defaultOptions = {
             rMultiplier: 2,
             minRadius: 30,
-            maxRadius: widthsc <= 768 ? 110 : 160,
+            maxRadius: widthsc <= 768 ? 115 : 160,
             minElements: 2,
             maxElements: 16
         };
