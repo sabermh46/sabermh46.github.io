@@ -212,9 +212,9 @@ nav.navigation .links > li > a:hover{
     flex-wrap: wrap;
 }
 .metric-card {
-    background: hsl(0, 0%, 95%);
+    background: hsl(270, 100%, 98%);
     padding: 8px 16px;
-    border: 2px solid hsla(0, 0%, 90%);
+    border: 2px solid rgb(223, 216, 255);
     border-radius: 8px;
 }
 .metric-value {
@@ -413,6 +413,7 @@ nav.navigation .links > li > a:hover{
 }
 .about-me .container {
     position: relative;
+    max-width: 800px;
 }
 .about-me .container p {
     margin: 20px auto;
