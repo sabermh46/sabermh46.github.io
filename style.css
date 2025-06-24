@@ -444,13 +444,29 @@ nav.navigation .links > li > a:hover{
     animation: squareAnim 10s ease-in-out 0s infinite forwards;
 }
 
-
+.skill-part {
+  max-width: 800px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+.skill-part div {
+  background: rgb(255, 255, 255);
+  padding: 0.8rem;
+  box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.05);
+  border-radius: 0.5rem;
+}
+.skill-part div > p {
+  line-height: 160%;
+}
 .bg-grad {
-  width: max-content;
+  max-width: max-content;
   font-size: 1.5rem;
-  font-weight: 900;
-  /* font-family: fantasy, "Fira Sans", sans-serif; */
+  font-weight: 500;
+  font-family: "Fira Sans", sans-serif;
   color: transparent;
+  margin-bottom: 0.6rem;
   background: linear-gradient(
     to right,
     #055e82,    /* start */
@@ -518,6 +534,9 @@ nav.navigation .links > li > a:hover{
     }
     .bg-grad {
       width: auto;
+    }
+    .skill-part {
+      grid-template-columns: 1fr;
     }
 }
 

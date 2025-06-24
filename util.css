@@ -72,10 +72,22 @@ body > div {
     bottom: -10px;
     left: 50%;
     transform: translateX(-50%);
-    background-color: var(--primary);
+    background-color: rgba(43, 14, 63, 0.276);
     transition: 0.5s ease;
 }
-
+.heading2::after {
+  content: '';
+  position: absolute;
+  height: 30%;
+  width: 90%;
+  top: 110%;
+  border-radius: 50%;
+  left: 50%;
+  background: #00000013;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  filter: blur(3px);
+}
 .inview .heading2 {
   letter-spacing: 0px;
   opacity: 1;
