@@ -444,6 +444,33 @@ nav.navigation .links > li > a:hover{
     animation: squareAnim 10s ease-in-out 0s infinite forwards;
 }
 
+
+.bg-grad {
+  width: max-content;
+  font-size: 1.5rem;
+  font-weight: 900;
+  /* font-family: fantasy, "Fira Sans", sans-serif; */
+  color: transparent;
+  background: linear-gradient(
+    to right,
+    #055e82,    /* start */
+    #b34c07,
+    #6313b2,
+    #055e82   /* repeat of start */
+  );
+  background-size: 200% 200%;
+  
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: gradientMove 3s linear infinite;
+}
+
+@keyframes gradientMove {
+  0%   { background-position: 200% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
 @media (max-width: 768px) {
     .author-container {
         flex-direction: column;
@@ -488,6 +515,9 @@ nav.navigation .links > li > a:hover{
     }
     .metric-card {
         max-width: 120px;
+    }
+    .bg-grad {
+      width: auto;
     }
 }
 
