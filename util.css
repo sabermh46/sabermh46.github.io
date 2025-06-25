@@ -57,23 +57,24 @@ body > div {
     position: relative;
     font-size: 2.5rem;
     color: var(--heading);
-    letter-spacing: -5px;
+    /* letter-spacing: -2px; */
+    transform: scaleX(0.4);
     opacity: 0;
     margin: 0 auto;
     margin-bottom: 2rem;
-    width: max-content;
+    max-width: max-content;
     transition: 0.4s ease;
 }
 .heading2::before {
     content: "";
     position: absolute;
-    width: 5%;
+    width: 50%;
     height: 2px;
     bottom: -10px;
     left: 50%;
     transform: translateX(-50%);
     background-color: rgba(43, 14, 63, 0.276);
-    transition: 0.5s ease;
+    /* transition: 0.5s ease; */
 }
 .heading2::after {
   content: '';
@@ -89,12 +90,13 @@ body > div {
   filter: blur(3px);
 }
 .inview .heading2 {
-  letter-spacing: 0px;
+  /* letter-spacing: 0px; */
+  transform: scaleX(1);
   opacity: 1;
 }
-.inview .heading2::before {
+/* .inview .heading2::before {
     width: 50%;
-}
+} */
 .text-center {
     text-align: center;
 }
@@ -335,7 +337,7 @@ body > div {
 
 @media (max-width: 768px) {
   .heading2 {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
   .skills-headline {
     font-size: 1rem;
