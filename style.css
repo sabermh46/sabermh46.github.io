@@ -488,14 +488,14 @@ nav.navigation .links > li > a:hover{
     #055e82   /* repeat of start */
   );
   background-size: 200% 200%;
-  opacity: 0;
+  transform: translateY(1rem);
   background-clip: text;
   -webkit-background-clip: text;
   transition: 0.3s;
 }
 
 .inview > .bg-grad {
-  opacity: 1;
+  transform: translateY(0);
   animation: gradientMove 3s linear infinite;
 }
 
