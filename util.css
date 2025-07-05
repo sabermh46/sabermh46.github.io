@@ -4,6 +4,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
 }
 :root {
     --surface: #f8f8f8;
@@ -54,18 +55,23 @@ body > div {
 
 .heading2 {
     font-family: "LXGW Marker Gothic", sans-serif;
+    height: 50px;
     position: relative;
     font-size: 2.5rem;
     color: var(--heading);
     /* letter-spacing: -2px; */
-    transform: scaleX(0.4);
+    transform: translateY(0px) scaleX(0.4);
     opacity: 0;
     margin: 0 auto;
     margin-bottom: 2rem;
     max-width: max-content;
     transition: 0.4s ease;
 }
-.heading2::before {
+.heading2 span {
+  display: inline-block;
+  animation: upper 5s ease 0s infinite forwards;
+}
+/* .heading2::before {
     content: "";
     position: absolute;
     width: 50%;
@@ -74,8 +80,9 @@ body > div {
     left: 50%;
     transform: translateX(-50%);
     background-color: rgba(43, 14, 63, 0.276);
-    /* transition: 0.5s ease; */
-}
+    transition: 0.5s ease;
+} */
+
 .heading2::after {
   content: '';
   position: absolute;
@@ -84,15 +91,32 @@ body > div {
   top: 110%;
   border-radius: 50%;
   left: 50%;
-  background: #00000013;
+  background: #00000021;
   transform: translate(-50%, -50%);
   z-index: -1;
   filter: blur(3px);
+  animation: shadowO 5s ease 0s infinite forwards;
 }
 .inview .heading2 {
   /* letter-spacing: 0px; */
   transform: scaleX(1);
   opacity: 1;
+}
+@keyframes shadowO {
+  from, to {
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+}
+@keyframes upper  {
+  from, to {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 /* .inview .heading2::before {
     width: 50%;
