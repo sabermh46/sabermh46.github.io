@@ -483,7 +483,7 @@ nav.navigation .links > li > a:hover{
 .bg-grad {
   max-width: max-content;
   font-size: 1.5rem;
-  font-weight: 900;
+  font-weight: 700;
   font-family: "Fira Sans", sans-serif;
   color: transparent;
   margin-bottom: 0.6rem;
@@ -498,7 +498,7 @@ nav.navigation .links > li > a:hover{
 background: linear-gradient(
   to right,
   #5e60ce,  /* start: vivid purple */
-  #b283ff,  /* mid1: deeper purple */
+  #4e955e,  /* mid1: deeper purple */
   #5d3796,  /* mid2: rich violet */
   #5e60ce   /* repeat of start */
 );
@@ -557,7 +557,7 @@ background: linear-gradient(
     .author-bio {
         text-align: justify !important;
         width: 100%;
-        font-size: 0.8rem !important;
+        font-size: 1rem !important;
     }
     .author-container .info a {
         margin: 0 auto;
