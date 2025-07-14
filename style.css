@@ -341,75 +341,17 @@ nav.navigation .links > li > a:hover{
   }
 }
 
-/* Timeline */
-.timeline {
-  position: relative;
-  padding: 2rem 0;
-}
+/* Project Section */
 
-.timeline::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 2px;
-  height: 100%;
-  background: var(--border);
-}
+   .projContainer {
+    background: #4e955e;
+   }
+   .projectCard {
 
-.timeline-item {
-  display: flex;
-  margin-bottom: 2rem;
-  position: relative;
-}
+   }     
 
-.timeline-item:nth-child(odd) {
-  flex-direction: row-reverse;
-}
 
-.timeline-date {
-  width: 40%;
-  text-align: right;
-  padding-right: 2rem;
-  font-weight: 600;
-  color: var(--primary);
-}
-
-.timeline-item:nth-child(odd) .timeline-date {
-  text-align: left;
-  padding-left: 2rem;
-  padding-right: 0;
-}
-
-.timeline-content {
-  width: 60%;
-  background: white;
-  padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-  position: relative;
-}
-
-.timeline-content::before {
-  content: '';
-  position: absolute;
-  top: 20px;
-  right: -8px;
-  width: 16px;
-  height: 16px;
-  background: white;
-  border: 3px solid var(--primary);
-  border-radius: 50%;
-  z-index: 2;
-}
-
-.timeline-item:nth-child(odd) .timeline-content::before {
-  right: auto;
-  left: -8px;
-}
-        
-
+   /* About Me */
 .about-me {
     
 }
