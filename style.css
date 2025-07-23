@@ -171,12 +171,12 @@ nav.navigation .links > li > a:hover{
 }
 
 
-.section2 {
+/* .section2 {
     padding: 40px 20px;
     position: relative;
     height: 300px;
     min-height: 150vh;
-}
+} */
 .b-wrapper {
     position: sticky;
     top:200px;
@@ -344,11 +344,89 @@ nav.navigation .links > li > a:hover{
 /* Project Section */
 
    .projContainer {
-    background: #4e955e;
+    position: relative;
+    min-height: 100vh;
+    padding-bottom: 100px;
+    padding-top: 50px;
+   }
+   .projContainer::before {
+    content: '';
+    height: 100%;
+    width: 3px;
+    background: rgb(60, 114, 195);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+   }
+   .projectCardWrapper {
+    position: relative;
+      width: 50%;
+      height: 150px;
+      min-width: 300px;
    }
    .projectCard {
+    width: calc(100% - 60px);
+    background: #ffffff;
+    min-height: 200px;
+    border-radius: 1rem;
+    box-shadow: 0 0 20px 20px rgba(0, 0, 0, 0.1);
+    overflow: clip;
+    padding: 1rem;
+   }
 
-   }     
+
+   .projectCardWrapper::before {
+      content: '';
+      height: 3px;
+      width: 60px;
+      background: rgb(60, 114, 195);;
+      position: absolute;
+      top: 50%;
+      right: 0%;
+   }
+   .projectCardWrapper:nth-of-type(even) {
+    margin-left: auto;
+   }
+   .projectCardWrapper:nth-of-type(even)::before {
+    left: 0%;
+   }
+  .projectCardWrapper:nth-of-type(even) .projectCard {
+    margin-left: auto;
+   }
+
+
+   @media (max-width: 700px) {
+   .projContainer::before {
+
+    left: 0%;
+      transform: translateX(0%);
+    }
+    .projectCardWrapper {
+        width: 100%;
+        height: 220px;
+        min-width: 300px;
+    }
+    .projectCardWrapper::before {
+      left: 0%;
+   }
+    .projectCardWrapper:nth-of-type(even)::before {
+      left: 0%;
+    }
+    .projectCardWrapper .projectCard {
+      margin-left: auto;
+    }
+   }
+
+   @media (max-width: 500px) {
+       .projectCard {
+          width: calc(100% - 20px);
+        }
+        .projectCardWrapper::before {
+          width: 20px;
+        }
+   }
+
 
 
    /* About Me */
