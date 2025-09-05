@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="150" height="150">
+  <g style="transform-origin:75.13px 75.003px">
+    <path id="a" fill="#29AAE1" d="M32.4 56.017C32.398 56.001 76.036 56 76.036 56c3.407 0 3.41.002 2 1.558l-29.65 32.404c-5.245-4.528-8.959-9.105-11.503-14.505-2.543-5.4-3.917-11.623-4.483-19.44Z" style="stroke-width:1;transform-origin:55.6614px 72.981px">
+      <animateTransform fill="freeze" additive="sum" attributeName="transform" begin="0s" calcMode="spline" dur="1s" keySplines="0.99 0 0.01 1" keyTimes="0; 1" repeatCount="indefinite" type="rotate" values="0;180"/>
+      <animateTransform fill="freeze" additive="sum" attributeName="transform" begin="0s" calcMode="spline" dur="1s" keySplines="1 0 0 1" keyTimes="0; 1" repeatCount="indefinite" type="translate" values="0 0;-39 -4"/>
+      <animateTransform fill="freeze" additive="sum" attributeName="transform" begin="1s" calcMode="spline" dur="1s" keySplines="1 0 0 1" keyTimes="0; 1" repeatCount="indefinite" type="rotate" values="0;180"/>
+      <animateTransform fill="freeze" additive="sum" attributeName="transform" begin="1s" calcMode="spline" dur="1s" keySplines="1 0 0 1" keyTimes="0; 1" repeatCount="indefinite" type="translate" values="0 0;-39 -4"/>
+    </path>
+    <path id="b" fill="#F6921D" d="M112.259 113.095c-6.725 10.58-21.19 26.91-48.009 26.91-36.617 0-63.073-31.017-51.502-61.248C15.091 72.634 22.882 60.704 32.363 56c1.462 17.464 6.251 25.303 15.99 33.946L34.98 104.998c-3.898 3.558-3.08 7.9 7.537 7.909l69.742.188Z" style="stroke-width:1"/>
+    <path fill="#29AAE1" d="M117.873 94.045c.001.016-43.636.017-43.636.017-3.407 0-3.41-.002-2-1.558l29.65-32.404c5.245 4.527 8.959 9.105 11.503 14.505 2.543 5.4 3.917 11.623 4.483 19.44Z" style="stroke-width:1;transform-box:fill-box;transform-origin:50% 50%">
+      <animateTransform fill="freeze" additive="sum" attributeName="transform" calcMode="spline" dur="1s" keySplines="1 0 0 1" keyTimes="0; 1" repeatCount="indefinite" type="translate" values="0 0;-39 -4"/>
+      <animateTransform fill="freeze" additive="sum" attributeName="transform" begin="0s" calcMode="spline" dur="1s" keySplines="1 0 0 1" keyTimes="0; 1" repeatCount="indefinite" type="rotate" values="0;180"/>
+      <animateTransform fill="freeze" additive="sum" attributeName="transform" begin="1s" calcMode="spline" dur="1s" keySplines="1 0 0 1" keyTimes="0; 1" repeatCount="indefinite" type="translate" values="0 0;-39 -4"/>
+      <animateTransform fill="freeze" additive="sum" attributeName="transform" begin="1s" calcMode="spline" dur="1s" keySplines="1 0 0 1" keyTimes="0; 1" repeatCount="indefinite" type="rotate" values="0;180"/>
+    </path>
+    <path fill="#0071BC" d="M38 36.91C44.725 26.33 59.19 10 86.01 10c36.617 0 63.073 31.017 51.502 61.248-2.344 6.124-10.134 18.053-19.616 22.757-1.461-17.464-6.25-25.302-15.99-33.946l13.374-15.052c3.898-3.557 3.08-7.9-7.537-7.908L38 36.91Z" style="stroke-width:1"/>
+    <animateTransform fill="freeze" additive="sum" attributeName="transform" calcMode="spline" dur="2s" keySplines="1 0 1 1; 0 0 0 1; 1 0 1 1; 0 0 0 1" keyTimes="0; 0.24881; 0.50119; 0.74881; 1" repeatCount="indefinite" type="scale" values="1 1;1.1 1.1;1 1;1.1 1.1;1 1"/>
+  </g>
+</svg>

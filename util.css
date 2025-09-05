@@ -52,6 +52,26 @@ body > div {
 .int-obs.inview {
     /* opacity: 1; */
 }
+.underdevelopment {
+  color: red;
+  padding: 3rem 0;
+  font-size: 2rem;
+}
+.underdevelopment span {
+  font-size: 1.5rem;
+}
+.expoffice {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.expoffice img {
+  width: 180px;
+  height: auto;
+  margin-top: 1rem;
+  filter: drop-shadow(0 0 5px rgba(0,0,0,0.4));
+}
 
 .heading2 {
     font-family: "LXGW Marker Gothic", sans-serif;
